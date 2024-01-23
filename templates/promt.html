@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title> login</title>
+{% endblock %}
+
+{% block body %}
+<div class="center">
+    <h1>promt enter</h1>
+    <form action="/promt" method='POST'>
+        promt:<input type="text" name="promt" id="promt"><br>
+        <input type="submit" value="enter">
+    </form>
+</div>
+{% endblock %}

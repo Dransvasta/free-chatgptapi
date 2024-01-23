@@ -1,0 +1,13 @@
+body{
+    margin:0px;
+}
+.center{
+    width: 50%; /* Set the width of the container */
+    margin: auto; /* Center the container horizontally */
+    text-align: center; /* Center the content inside the container */
+    padding: 20px;
+    /* Optional: Center the container vertically using flexbox */
+    /*display: flex;*/
+    align-items: center;
+    min-height: 100vh;
+}

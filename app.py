@@ -21,7 +21,7 @@ def opengpt(username="animelover132003",password="8870480win"):
         driver.default_get("https://chat.openai.com")
         login_field = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, "//*[@id=\"__next\"]/div[1]/div[2]/div[1]/div/div/button[1]")))
         login_field.click()
-        click2=WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".c2694b5b5.cf417db7d.c385f7bb4")))
+        click2=WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "button[data-provider='google']")))
         click2.click()
         email_field=WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.CSS_SELECTOR,"#identifierId")))
         email_field.send_keys(username)
@@ -48,7 +48,7 @@ def generate_promt(prompt):
             soup = BeautifulSoup(html_content, 'html.parser')
             list_answers=soup.find_all(class_="markdown prose w-full break-words dark:prose-invert dark")
         return list_answers[-1].text
-def closegpt(self):
+def closegpt():
         global driver
         global list_answers
         driver.close()
@@ -64,9 +64,12 @@ def launch():
         print("hello--------------------------------------------------------------------")
         username = request.args.get('username') 
         password = request.args.get('pass')
-        launchgpt()
-        opengpt(username,password)
-        re['status']="Success"
+        try:
+               launchgpt()
+               opengpt(username,password)
+               re['status']="Success"
+        except:
+               re['status']='failure'
         return jsonify(re)
 
 @app.route('/promt')
@@ -80,5 +83,9 @@ def promt():
               promt_answer['result'] = "pls launch the gpt before entering the promt"
        promt_answer['result'] = generate_promt(promt_answer['prompt'])
        return jsonify(promt_answer)
+@app.route('/stop')
+def stop():
+       closegpt()
+       return "closed succeessfully"
 if __name__=='__main__':
        app.run(debug=True,threaded=False)

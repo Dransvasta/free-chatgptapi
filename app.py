@@ -18,7 +18,7 @@ def launchgpt():
         global drivers
         global c
         global list_answers
-        c+=1
+        c=generate_unique_id()
         driver=Driver(uc=True)
         drivers[c]=driver
         list_answers[c]=[]

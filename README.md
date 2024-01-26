@@ -35,7 +35,7 @@ Make sure you have the following installed:
 
     '''bash
     pip install -r requirements.txt
-##Aditional
+###Aditional
 # Exposing Localhost with ngrok
 
 For testing purposes, you can use [ngrok](https://ngrok.com/) to expose your local Flask application to the internet. Follow these steps:

@@ -1,6 +1,6 @@
 import requests
 import json
-server="https://1f7c-122-164-82-247.ngrok-free.app"
+server="http://127.0.0.1:5000"
 def startgpt(username,password):
     global server
     html = requests.get(server+'/launch?username='+username+'&pass='+password,headers={"ngrok-skip-browser-warning":"40"})
@@ -12,7 +12,6 @@ def startgpt(username,password):
 def generate(driverid,prompt):
     global server
     html = requests.get(server+'/promt/'+str(driverid)+'?prompt='+prompt,headers={"ngrok-skip-browser-warning":"40"})
-    print(html.text)
     d=json.loads(html.text)
     return d['result']
 def stop(driverid):

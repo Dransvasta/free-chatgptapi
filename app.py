@@ -80,9 +80,10 @@ def launch():
                re['driverid']=tc
         except:
                re['status']='failure'
+        print(tc in drivers)
         return jsonify(re)
 
-@app.route('/promt/<int:driverid>')
+@app.route('/promt/<string:driverid>')
 def promt(driverid):
        promt_answer = {}
        promt_answer['prompt'] = request.args.get('prompt')

@@ -46,13 +46,13 @@ For testing purposes, you can use [ngrok](https://ngrok.com/) to expose your loc
 
 2. **Start your Flask application:**
 
-   ```bash
+   ```
    python app.py
 3. Running ngrok:
 
 In a new terminal, navigate to the directory where ngrok is installed and run the following command:
 
-    ```bash
+    ```
     ngrok http 5000
 ## Usage
 
@@ -60,7 +60,7 @@ In a new terminal, navigate to the directory where ngrok is installed and run th
 
 1.To launch a new GPT chat session, make a GET request to the /launch endpoint:
 
-    '''bash
+    '''
     curl -X GET "http://localhost:5000/launch?username=your_username&pass=your_password"
 This will return a JSON response with the status and the generated driverid for the session.
 The Json contains the driver id(['driverid']) which you will need to pass on later two requests to connect to your driver.
@@ -68,14 +68,14 @@ The Json contains the driver id(['driverid']) which you will need to pass on lat
 2.Send Prompts
 To send a prompt to an existing GPT chat session, make a GET request to the /promt/<int:driverid> endpoint:
 
-    '''bash
+    '''
     curl -X GET "http://localhost:5000/promt/your_driverid?prompt=your_prompt_text"
     This will return a JSON response with the prompt and the GPT-generated response.
 
 3.Stop GPT Session
 To stop an existing GPT chat session, make a GET request to the /stop/<int:driverid> endpoint:
 
-    '''bash
+    '''
     curl -X GET "http://localhost:5000/stop/your_driverid"
 ### API Endpoints
 1./launch: Launches a new GPT chat session.
@@ -88,7 +88,7 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 ### License
 This project is for educational purposes only.This project is licensed under the MIT License.
 
-    '''javascript
+    '''
     Remember to replace placeholders like `your_username`, `your_password`, and `your_driverid` with the appropriate values. Also, ensure that you have accurate information about the API endpoints and functionality based on your actual code implementation.
 
 

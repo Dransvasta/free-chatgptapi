@@ -36,7 +36,7 @@ Make sure you have the following installed:
     '''bash
     pip install -r requirements.txt
 ### Aditional
-# Exposing Localhost with ngrok
+#### Exposing Localhost with ngrok
 
 For testing purposes, you can use [ngrok](https://ngrok.com/) to expose your local Flask application to the internet. Follow these steps:
 
@@ -54,9 +54,9 @@ In a new terminal, navigate to the directory where ngrok is installed and run th
 
     ```bash
     ngrok http 5000
-##Usage
+## Usage
 
-###Launch GPT Session
+### Launch GPT Session
 
 1.To launch a new GPT chat session, make a GET request to the /launch endpoint:
 
@@ -77,15 +77,15 @@ To stop an existing GPT chat session, make a GET request to the /stop/<int:drive
 
     '''bash
     curl -X GET "http://localhost:5000/stop/your_driverid"
-###API Endpoints
+### API Endpoints
 1./launch: Launches a new GPT chat session.
 2./promt/<int:driverid>: Sends a prompt to an existing GPT chat session.
 3./stop/<int:driverid>: Stops an existing GPT chat session.
 
-###Contributing
+### Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with your changes.
 
-###License
+### License
 This project is for educational purposes only.This project is licensed under the MIT License.
 
     '''javascript

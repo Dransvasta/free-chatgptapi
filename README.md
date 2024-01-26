@@ -7,6 +7,7 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+  - [Aditional](#aditional)
 - [Usage](#usage)
   - [Launch GPT Session](#launch-gpt-session)
   - [Send Prompts](#send-prompts)
@@ -33,8 +34,8 @@ Make sure you have the following installed:
    cd free-chatgptapi
 2.Install the required dependencies:
 
-   ```bash
-   pip install -r requirements.txt
+    ```bash
+    pip install -r requirements.txt
 
 ### Aditional
 #### Exposing Localhost with ngrok

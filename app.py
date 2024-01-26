@@ -94,7 +94,7 @@ def promt(driverid):
               promt_answer['result'] = "pls launch the gpt before entering the promt"
        promt_answer['result'] = generate_promt(driverid,promt_answer['prompt'])
        return jsonify(promt_answer)
-@app.route('/stop/<int:driverid>')
+@app.route('/stop/<string:driverid>')
 def stop(driverid):
        closegpt(driverid)
        return "closed succeessfully"
